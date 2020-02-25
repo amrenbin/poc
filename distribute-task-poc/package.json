@@ -1,0 +1,38 @@
+{
+  "name": "distribute-task-poc",
+  "version": "1.0.0",
+  "description": "PoC project to demonstrate distributed task using Cosmos",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node ./dist/server.js",
+    "watch": "tsc -w",
+    "develop": "concurrently --prefix [{name}] --names run,bld -c dim,dim.gray \"nodemon -C -d 1.0 -w dist -- dist/server.js\" \"npm run watch\""
+  },
+  "author": "binren@microsoft.com",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/cosmos": "^3.6.2",
+    "chalk": "^3.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "nanoid": "^2.1.11",
+    "underscore": "^1.9.2"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/express": "^4.17.2",
+    "@types/morgan": "^1.7.37",
+    "@types/nanoid": "^2.1.0",
+    "@types/node": "^12.12.28",
+    "@types/underscore": "^1.9.4",
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2",
+    "rimraf": "^3.0.2",
+    "source-map-support": "^0.5.16",
+    "typescript": "^3.8.2"
+  }
+}
