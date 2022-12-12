@@ -17,7 +17,7 @@
   "dependencies": {
     "@azure/cosmos": "^3.6.2",
     "chalk": "^3.0.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "morgan": "^1.9.1",
     "nanoid": "^2.1.11",
     "underscore": "^1.9.2"
